@@ -6,8 +6,8 @@ Adobe Experience Platform (AEP) supports a number of popular data warehouse and 
 ## Prerequisites
 * Access to an Azure-hosted [Databricks instance](https://azure.microsoft.com/en-us/products/databricks)
 * Access to [Adobe Experience Platform](https://experience.adobe.com/) and [Adobe Developer Console](https://developer.adobe.com/)
-* Ability to perform API calls using command line (i.e., [cURL](https://curl.se/)), custom code, or a tool like [Postman](https://www.postman.com/).
-
+* Ability to perform API calls using command line (i.e., [cURL](https://curl.se/)), custom code, or a tool like [Postman](https://www.postman.com/)
+* Some sample data to load (the file used in this tutorial is available here: [Gaming_Profile.csv](/data/Gaming_Profile.csv)
 ---
 
 ## Synopsis and Architecture
