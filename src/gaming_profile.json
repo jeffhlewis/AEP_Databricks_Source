@@ -1,0 +1,131 @@
+[
+    {
+        "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/4227369dca1ef0fbcdee0fcadaefe58a379eb0ae46eb7e17",
+        "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.4227369dca1ef0fbcdee0fcadaefe58a379eb0ae46eb7e17",
+        "meta:resourceType": "mixins",
+        "version": "1.1",
+        "title": "Gaming Profile Attributes",
+        "type": "object",
+        "description": "",
+        "definitions": {
+            "customFields": {
+                "properties": {
+                    "_<XDM_TENANTID_PLACEHOLDER>": {
+                        "type": "object",
+                        "properties": {
+                            "user_id": {
+                                "minLength": 1,
+                                "required": [],
+                                "type": "string",
+                                "description": "",
+                                "title": "User ID",
+                                "meta:xdmType": "string"
+                            },
+                            "customer_ltv": {
+                                "required": [],
+                                "type": "number",
+                                "description": "",
+                                "title": "Customer LTV",
+                                "meta:xdmType": "number"
+                            },
+                            "date_joined": {
+                                "required": [],
+                                "format": "date-time",
+                                "type": "string",
+                                "description": "",
+                                "title": "Date Joined",
+                                "meta:xdmType": "date-time"
+                            },
+                            "email_opt_in": {
+                                "required": [],
+                                "type": "boolean",
+                                "description": "",
+                                "title": "Email Opt-In",
+                                "meta:xdmType": "boolean"
+                            },
+                            "preferred_platform": {
+                                "minLength": 1,
+                                "required": [],
+                                "type": "string",
+                                "description": "",
+                                "title": "Preferred Platform",
+                                "meta:xdmType": "string"
+                            }
+                        },
+                        "meta:xdmType": "object"
+                    }
+                }
+            }
+        },
+        "allOf": [
+            {
+                "$ref": "#/definitions/customFields",
+                "type": "object",
+                "meta:xdmType": "object"
+            }
+        ],
+        "meta:extensible": true,
+        "meta:abstract": true,
+        "meta:intendedToExtend": [],
+        "meta:xdmType": "object",
+        "meta:sandboxId": "3a096756-74b0-4c26-8967-5674b02c26fe",
+        "meta:sandboxType": "production"
+    },
+    {
+        "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/schemas/a9e0d94adf2e90616f5ba843b5f1eef29f6a9dda64830c29",
+        "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.schemas.a9e0d94adf2e90616f5ba843b5f1eef29f6a9dda64830c29",
+        "meta:resourceType": "schemas",
+        "version": "1.1",
+        "title": "Gaming_Profile",
+        "type": "object",
+        "description": "Profile for an individual user on an online gaming platform.",
+        "allOf": [
+            {
+                "$ref": "https://ns.adobe.com/xdm/context/profile",
+                "type": "object",
+                "meta:xdmType": "object"
+            },
+            {
+                "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details",
+                "type": "object",
+                "meta:xdmType": "object"
+            },
+            {
+                "$ref": "https://ns.adobe.com/xdm/context/profile-person-details",
+                "type": "object",
+                "meta:xdmType": "object"
+            },
+            {
+                "$ref": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/4227369dca1ef0fbcdee0fcadaefe58a379eb0ae46eb7e17",
+                "type": "object",
+                "meta:xdmType": "object"
+            }
+        ],
+        "meta:extensible": false,
+        "meta:abstract": false,
+        "meta:extends": [
+            "https://ns.adobe.com/xdm/context/profile-person-details",
+            "https://ns.adobe.com/xdm/context/profile-personal-details",
+            "https://ns.adobe.com/xdm/common/auditable",
+            "https://ns.adobe.com/xdm/data/record",
+            "https://ns.adobe.com/xdm/context/profile",
+            "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/4227369dca1ef0fbcdee0fcadaefe58a379eb0ae46eb7e17"
+        ],
+        "meta:xdmType": "object",
+        "meta:class": "https://ns.adobe.com/xdm/context/profile",
+        "meta:sandboxId": "3a096756-74b0-4c26-8967-5674b02c26fe",
+        "meta:sandboxType": "production"
+    },
+    {
+        "@type": "xdm:descriptorIdentity",
+        "xdm:sourceSchema": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/schemas/a9e0d94adf2e90616f5ba843b5f1eef29f6a9dda64830c29",
+        "xdm:sourceVersion": 1,
+        "xdm:sourceProperty": "/personID",
+        "xdm:namespace": "username",
+        "xdm:property": "xdm:code",
+        "xdm:isPrimary": true,
+        "meta:sandboxId": "3a096756-74b0-4c26-8967-5674b02c26fe",
+        "meta:sandboxType": "production",
+        "meta:resourceType": "descriptors"
+    }
+]
