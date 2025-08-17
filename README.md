@@ -1,7 +1,7 @@
 # Adobe Experience Platform: Databricks Source Connector Tutorial
 Adobe Experience Platform (AEP) supports a number of popular data warehouse and lakehouse sources out-of-the-box with native connectors. The latest addition to this collection of source connectors is one for **Azure Databricks**. The following article provides an end-to-end tutorial and deep dive information about AEP's Databricks source connector, including information on how to set up and configure an Azure Databricks instance to test it yourself.
 
-![Developed by a Human, Not AI](/img/Developed-By-a-Human-Not-By-AI-Badge-white.svg)
+[<img src="img/Developed-By-a-Human-Not-By-AI-Badge-white.svg" alt="Developed by a Human, Not AI" />](https://notbyai.fyi/)
 
 ## Prerequisites
 * Access to an Azure-hosted [Databricks instance](https://azure.microsoft.com/en-us/products/databricks)
@@ -400,7 +400,7 @@ If you wish observe data in-flight through the AEP DLZ and on to AEP, you can co
 > 💡 For more information on connecting to the DLZ via Azure Storage Explorer, refer to [this tutorial on DLZ](https://github.com/jeffhlewis/AEP_DataLandingZone?tab=readme-ov-file#connecting-azure-storage-explorer-to-data-landing-zone).
 
 1. Open **Azure Storage Explorer** and connect to the Databricks DLZ container using the SAS URI value from **step 1.2**.
-2. Once the AEP source dataflow connects to the Databricks compute cluster and starts receiving data, a new folder is in the container called `adobe-managed-staging`
+2. Once the AEP source dataflow connects to the Databricks compute cluster and starts receiving data, a new folder is created in the container called `adobe-managed-staging`
 
 ![Databricks DLZ Run Monitoring - 1 of 2](/img/dlz-processing-1.png)
 
