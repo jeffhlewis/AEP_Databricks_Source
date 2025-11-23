@@ -319,6 +319,27 @@ Before you wrap up with the Databricks configuration, you need to create an acce
 
 Once you've documented the access token, the Databricks steps are complete, and you're ready to configure the AEP source connector.
 
+### 4.3 &ndash; Extra Permissions Required for Hive Metastore Setups
+
+So far in this tutorial, the directions have been for Unity Catalog setups in Databricks. If you're using a legacy Hive Metastore setup, there are some extra permissions you will need to set.
+
+1. Ensure that your compute cluster has granted the `Can Attach To` permission to the security group that your service account is assigned to.
+
+2. Run the following permission grants to give your security group the proper access it needs to run queries:
+```sql
+-- Grant access to database/schema
+GRANT USAGE ON DATABASE <database> TO `<security_group>`;
+
+-- Grant access to tables/views
+GRANT READ_METADATA ON TABLE <database>.<table> TO `<security_group>`;
+GRANT SELECT ON TABLE <database>.<table> TO `<security_group>`;
+
+-- Grant SELECT and MODIFY to ANY FILE. MODIFY is required here due to
+-- behind-the-scenes temp data being written to storage in Databricks
+GRANT SELECT ON ANY FILE TO `<security_group>`;
+GRANT MODIFY ON ANY FILE TO `<security_group>`;
+```
+
 ---
 
 ## Step 5 &ndash; Configure Databricks Source Connector in AEP UI
